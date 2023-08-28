@@ -10,7 +10,7 @@ class Program
     static void Main()
     {
         STUDENTS students = new STUDENTS();
-        students.CreateStudent(new STUDENT { STUDENTNAME = "FRANK" });
+        students.CreateStudent(new STUDENT { STUDENTNAME = "CHARLIE" });
         students.DeleteStudent(6);
         students.UpdateStudent(7, new STUDENT { STUDENTNAME = "EMILIANO" });
 
