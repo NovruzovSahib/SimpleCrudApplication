@@ -15,7 +15,11 @@ namespace SimpleCrudApplication.CLASSES
         {
             relationshipEntities = new RELATIONSHIPEntities();
         }
-
+        public List<STUDENTANDCOURSE> SelectStudentInCourse()
+        {
+            var studentandcourse = relationshipEntities.STUDENTANDCOURSEs.ToList();
+            return studentandcourse;
+        }
         public void EnrollStudentInCourse(int studentId, int courseId)
         {
             try

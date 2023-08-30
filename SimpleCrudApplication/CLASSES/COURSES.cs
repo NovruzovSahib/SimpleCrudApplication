@@ -15,7 +15,11 @@ namespace SimpleCrudApplication.CLASSES
         {
                 relationshipEntities = new RELATIONSHIPEntities();
         }
-
+        public List<COURSE> SelectCourse()
+        {
+            var courses = relationshipEntities.COURSEs.ToList();
+            return courses;
+        }
         public void CreateCourse(COURSE course)
         {
             try

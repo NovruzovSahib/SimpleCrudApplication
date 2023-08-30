@@ -14,7 +14,12 @@ namespace SimpleCrudApplication.CLASSES
         {
             relationshipEntities = new RELATIONSHIPEntities();
         }
-       public void CreateStudent(STUDENT student)
+        public List<STUDENT> SelectStudent()
+        {
+            var students = relationshipEntities.STUDENTs.ToList();
+            return students;
+        }
+        public void CreateStudent(STUDENT student)
         {
             try
             {
@@ -55,14 +60,14 @@ namespace SimpleCrudApplication.CLASSES
                 Console.WriteLine($"Error occured", ex.Message);
             }
         }
-        public void UpdateStudent(int studentid,STUDENT newstudent)
+        public void UpdateStudent(int studentid, STUDENT newstudent)
         {
             var student = relationshipEntities.STUDENTs.FirstOrDefault(s => s.ID == studentid);
             try
             {
                 if (student != null)
                 {
-                    student.STUDENTNAME = newstudent.STUDENTNAME; 
+                    student.STUDENTNAME = newstudent.STUDENTNAME;
                     relationshipEntities.SaveChanges();
                     Console.WriteLine($"Student with ID {studentid} updated successfully.");
                 }
